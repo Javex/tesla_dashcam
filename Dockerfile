@@ -6,6 +6,8 @@ COPY --from=build-stage /usr/local/share /usr/local/share
 COPY --from=build-stage /usr/local/include /usr/local/include
 COPY --from=build-stage /usr/local/lib /usr/local/lib
 
+WORKDIR /usr/src/app/tesla_dashcam
+
 ENV LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -23,6 +25,9 @@ RUN apk add --no-cache --update \
     # ffmpeg-libs \
  && mkdir /usr/share/fonts/truetype \
  && ln -s /usr/share/fonts/TTF /usr/share/fonts/truetype/freefont
+
+COPY . /usr/src/app/tesla_dashcam
+RUN pip install -r requirements.txt
 
 ENV PYTHONUNBUFFERED=true
 ENV TZ=America/New_York
