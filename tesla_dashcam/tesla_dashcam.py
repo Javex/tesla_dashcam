@@ -98,7 +98,7 @@ DEFAULT_FONT = {
     "darwin": "/Library/Fonts/Arial Unicode.ttf",
     "win32": "/Windows/Fonts/arial.ttf",
     "cygwin": "/cygdrive/c/Windows/Fonts/arial.ttf",
-    "linux": "/usr/share/fonts/truetype/freefont/FreeSans.ttf",
+    "linux": "/usr/share/fonts/freefont/FreeSans.otf",
     "freebsd11": "/usr/share/local/fonts/freefont-ttf/FreeSans.ttf",
 }
 
